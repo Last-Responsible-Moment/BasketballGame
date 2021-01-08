@@ -41,6 +41,10 @@ public class Players : MonoBehaviour
     public GameObject rightD;
     public GameObject postD;
 
+    private GameObject redTurnText; // Text displayed if red teams turn(cpyou)
+    public GameObject blueTurnText; // Text displayed if blue team turn(player 1)
+    public GameObject RedTurnText { get => redTurnText; set => redTurnText = value; }
+    public GameObject BlueTurnText { get => blueTurnText; set => blueTurnText = value; }
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +71,7 @@ public class Players : MonoBehaviour
     }
 
     // Update is called once per frame
+    // Updates the position names with the player's first initial and last name
     void Update()
     {
         COName.text = center.initialname;
@@ -78,7 +83,8 @@ public class Players : MonoBehaviour
         RDName.text = rightCPU.initialname;
         PDName.text = postCPU.initialname;
     }
-
+    
+    //changes defense side to offense
     public void SwapSides()
     {
         playerData temp1 = center;
